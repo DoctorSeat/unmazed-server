@@ -11,7 +11,10 @@ import java.io.IOException;
 
 @Service
 public class ImageTransferService {
-    private ImageRepository imageRepository;
+    private final ImageRepository imageRepository;
+    public ImageTransferService() {
+        imageRepository = new ImageRepository();
+    }
     public BufferedImage loadImage(String imgName) throws IOException {
         return imageRepository.loadBufferedImage(imgName);
     }
